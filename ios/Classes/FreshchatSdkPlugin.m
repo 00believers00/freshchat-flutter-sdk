@@ -66,6 +66,19 @@ NSNotificationCenter *center;
     [[Freshchat sharedInstance]showConversations:visibleVC];
 }
 
+- (void)closeConversations{
+    UIViewController *visibleVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+
+    // Check if the rootViewController is a UINavigationController
+    if ([visibleVC isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navController = (UINavigationController *)visibleVC;
+        [navController popViewControllerAnimated:YES];
+    } else if (visibleVC.presentedViewController) {
+        // If the rootViewController presented another viewController (e.g., Freshchat), dismiss it
+        [visibleVC dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 -(void)showFAQs{
     UIViewController *visibleVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [[Freshchat sharedInstance] showFAQs:visibleVC];
@@ -502,6 +515,8 @@ NSNotificationCenter *center;
         [instance init:call];
     }else if([@"showConversations" isEqualToString:call.method]){
         [instance showConversations];
+    }else if([@"closeConversations" isEqualToString:call.method]){
+        [instance closeConversations];
     }else if([@"showFAQ" isEqualToString:call.method]){
         [instance showFAQs];
     }else if([@"getFreshchatUserId" isEqualToString:call.method]){
