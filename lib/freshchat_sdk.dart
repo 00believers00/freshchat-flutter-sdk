@@ -583,4 +583,8 @@ class Freshchat {
     };
     return userInteractionController.stream;
   }
+
+  static Future<void> closeConversations() async {
+    await _channel.invokeMethod('closeConversations');
+  }
 }

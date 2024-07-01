@@ -1,6 +1,7 @@
 package com.freshchat.consumer.sdk.flutter;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -165,6 +166,15 @@ public class FreshchatSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
     public void showConversations() {
         Freshchat.showConversations(context);
+    }
+
+    public void closeConversations() {
+        Context appContext = context.getApplicationContext();
+        Freshchat.showConversations();
+
+        Activity activity = (Activity) appContext;
+        Log.i(LOG_TAG, "Current activity name: " + activity.getClass().getName());
+        activity.finish();
     }
 
     public String getFreshchatUserId() {
@@ -575,6 +585,10 @@ public class FreshchatSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
                 case "showConversations":
                     showConversations();
+                    break;
+                
+                case "closeConversations":
+                    closeConversations();
                     break;
 
                 case "getFreshchatUserId":
