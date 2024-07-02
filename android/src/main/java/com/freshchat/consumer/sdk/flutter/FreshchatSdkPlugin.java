@@ -152,8 +152,6 @@ public class FreshchatSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
     public void closeConversations() {
         Context appContext = context.getApplicationContext();
-        Freshchat.showConversations();
-
         Activity activity = (Activity) appContext;
         Log.i(LOG_TAG, "Current activity name: " + activity.getClass().getName());
         activity.finish();
