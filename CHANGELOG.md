@@ -1,3 +1,96 @@
+## 0.10.23 (06/01/2025)
+### Bug Fixes
+* Fixed an issue where the chat screen is not scrolling if carousel is present in the screen in Android.
+* Fixed UI issue where extra space was added to carousel card with HTML content in iOS.
+
+### Enhancement
+* Gradle 8.0 support in Android.
+
+## 0.10.22 (04/12/2024)
+### Features
+* Exposed an FCEventAgentProfileClick event to retrieve agent details upon clicking the agent profile in Android and iOS.
+* Added a public API to set and get the agent profile click redirection URI in Android.
+### Bug Fixes
+* Fixed an issue where an extra space appeared in the carousel card of user messages in Android.
+* Fixed an issue with carousel card selection in specific scenarios in Android.
+* Fixed an issue where the chat failed to scroll to the latest message after multiple carousel items were selected in Android.
+* Fixed an issue where the image caption was not removed after sending an image message in Android.
+* Fix UI issue where bot nodes configured after feedback bot message were not displayed properly in iOS.
+* Fix crash related to footer view when using multiselect buttons and dropdowns on apps built with Xcode 16 for iOS 18 users in iOS.
+
+## 0.10.21 (04/10/2024)
+### Features
+* Added new SDK public API to dismiss FreshchatSDK screen if currently visible.
+### Bug Fixes
+* Fixed an issue where links without descriptions were not working in the Bot Article flow in Android.
+* Fixed an issue where quick actions were not hidden immediately after a conversation was resolved in Android.
+* Fixed an issue where anonymous implementations of FreshchatWebListener were getting garbage collected after a locale change in Android.
+* Fixed an issue where the country code was not retained in the view in Android.
+* Fixed an issue where images captured with the camera were rotated 90 degrees to the left on some devices in Android.
+* Fixed an issue where the file name preview was not consistent for images taken via the camera in Android.
+* Fixed an issue with hyperlink breakage in Android.
+* Fix for notification not working in iOS 18 sandbox environment.
+* Fix occasional issues with the reply editor display in the dropdown, carousel and option selections in iOS.
+* Fix for quick option selection menu buttons are not hidden after a conversation is resolved in iOS.
+* Fix for bot articles flow where links without descriptions are not working in iOS.
+* Fix rare crash during resetUser API call in iOS.
+* Fix the image with text alignment issue in conversation message in iOS.
+* Fix the issue where the “Was this answer helpful?” feedback options (Yes/No) were not displaying at the bottom of the article in iOS.
+* Fix where we removed the 256-character limit for setting up the user properties in iOS.
+* Fix added support for this year’s new devices in iOS.
+* Fix the issue where the reply editor was visible when sending a carousel via the public API. Now, the reply editor will not appear for carousels sent through the public API in iOS.
+* Fix an issue where the “Select All” button was not displayed in the multi-select carousel in some edge cases in iOS.
+### Enhancement
+* Removed the character count limitation for setting user properties
+
+## 0.10.20 (28/08/2024)
+### Bug fixes
+* Fixed orientations of quick reply option for RTL users in iOS.
+* Fixed missing underlines in phone numbers within chat messages in iOS.
+* Fixed missing separator line between the reply editor and footer branding view in iOS.
+* Fixed display of file extension and size on the chat preview screen when the file name is long in iOS.
+* Fixed text and image position swapping in chat messages after restoring the user in iOS.
+* Optimised message rendering in the chat detail view in iOS.
+* Fixed a rare crash linked with keychain storage component in iOS.
+* Fixed an occasional crash when searching for support articles in iOS.
+* Fixed auto-scrolling not work correctly after selecting carousel and dropdown messages in iOS.
+* Fixed an issue for keyboard automatically dismiss after user sent a message in non-bot conversation in iOS.
+* Fix for Customer chat history not getting restored above a few messages in Android.
+* Fix for FAQ article message is not taking up the screen space and looks squished/Compressed in Android.
+
+## 0.10.19 (08/08/2024)
+### Bug fixes
+* Fix for Window Manager Bad Token Exception when attaching pictures in Android.
+* Fix for issue with custom link handler not working in conversation in Android.
+* Fixed the issue where the conversation list was loading for a long time if the token status was expired after reset user in iOS.
+* Fixed the ‘Token not processed’ status displayed when the user restored with an invalid token in specific scenarios in iOS.
+* Fixed the phone number validation issue where the bot flow did not proceed to the next step when an Arabic phone number was entered in iOS.
+* Fixed the issue where after closing a conversation screen, another or the same conversation screen would pop up in iOS.
+* Fixed an intermittent crash in React Native when tapping on a user message in iOS.
+* Resolved the issue where the keyboard is dismissed after opening the country code view in iOS.
+* Fixed  issue where chatbot flows were not triggering properly, including instances where users were able to type and send replies initially in iOS.
+* Fixed the looping of input messages sent by the user, which was causing issues in the production conversation in iOS.
+
+### Enhancement
+* Updated SDK to target Android 14 to comply with Google Play Store policies.
+
+## 0.10.18 (12/07/2024)
+### Bug fixes
+* Fix for bot quick actions display once a conversation is resolved in iOS.
+* Added support for html content in carousels and fix for hyperlink redirection in carousel's secorndary button and description content in iOS.
+* Fix for chat history restoration issue with pagination in iOS.
+* Fix for bot specific variables not updating in bot flows in iOS.
+* Fix correct display of search options in the searchable list for Slash command quick actions in iOS.
+* Fix security issue where HTML injection is allowed through the chat input field in iOS.
+* Fix crash in bot articles feedback option when sent in languages other than English in iOS.
+* Fix for the SDK text input field type being set up for OTP autofilling by default in Android.
+* Fix for the possibility of HTML injection through the SDK's chat input field in Android.
+* Fix for the alignment issue in the categories listing screen in Android.
+* Fix for the chat reply window starting with a lowercase letter in Android.
+* Fix for the agent response expectation time taking a few seconds to update after a locale change in Android.
+* Fix for incorrect Preview messages being shown in Channels list in Android.
+* Fix for failing read receipts in conversations in Android.
+
 ## 0.10.17 (21/06/2024)
 ### Enhancement
 * Upgraded min SDK to 21 in Android.
